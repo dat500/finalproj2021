@@ -10,8 +10,10 @@ class MRFilter(MRJob):
         l = [s.strip('"') for s in line.split(',')]
         flag=True
         try:
+            #these 2 lines check if the latitude and longitude are number
             float(l[19])
-            if ( float(l[19]) >=41  and float(l[19])<42.1):
+            float(l[20])
+            if ( float(l[19]) >=40  and float(l[19])<45 and float(l[20]) >=-90  and float(l[20])<-85):
             # strip off quotes
                 yield line.replace('"',''), None
 
