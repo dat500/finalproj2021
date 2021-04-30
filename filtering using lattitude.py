@@ -8,7 +8,6 @@ class MRFilter(MRJob):
         # Each line is CSV
         # Skip header and output just 1st Feb
         l = [s.strip('"') for s in line.split(',')]
-        flag=True
         try:
             #these 2 lines check if the latitude and longitude are number
             float(l[19])
