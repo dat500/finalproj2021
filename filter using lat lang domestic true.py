@@ -2,9 +2,7 @@ from mrjob.job import MRJob
 import mrjob
 import pdb
 class MRFilter(MRJob):
-    # We want raw value only output - no key
-    OUTPUT_PROTOCOL = mrjob.protocol.RawValueProtocol
-
+    
     def mapper(self, _, line):
         # Each line is CSV
         # Skip header and output just 1st Feb
